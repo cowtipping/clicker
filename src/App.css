@@ -1,38 +1,274 @@
-.App {
+:root {
+  --light: #daff7d;
+  --lightish: #b2ef9b;
+  --dark: #7e3f8f;
+  --darkish: #81559b;
+  --mid: #8c86aa;
+  --btnwidth: 380px;
+  --darkest: #333333;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--light);
+  font-family: "Poppins", sans-serif;
+}
+
+button {
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  font-family: "Rubik Distressed", cursive;
+  letter-spacing: 2px;
+  color: var(--darkest);
+}
+
+/* grids */
+
+.container {
+  max-width: 50%;
+  margin: auto;
+  display: grid;
+}
+
+header {
+  grid-column: 1 / 4;
+  display: flex;
+  background-color: var(--light);
+  align-items: baseline;
+  padding-left: 30px;
+}
+
+header p {
+  margin-left: auto;
+}
+
+.messages {
+  background-color: beige;
+  grid-column: 1 / 4;
+}
+
+.wastebux {
+  background-color: var(--dark);
+  color: var(--light);
+  grid-column: 1 / 4;
+}
+
+.waste {
+  grid-column: 1 / 2;
+}
+
+.sidebar {
+  grid-column: 3 / 4;
+}
+
+/* other stuff */
+
+.messages {
+  text-align: center;
+  background-color: var(--dark);
+  color: var(--lightish);
+}
+
+.waste,
+.waste-click {
+  margin: auto;
+  padding: 40px 0 40px 0;
+}
+
+.waste img {
+  animation: textAnimation 1s infinite;
+}
+
+.waste-click img {
+  animation: shake 500ms;
+}
+
+.waste img:hover,
+.waste-click img:hover {
+  cursor: pointer;
+}
+
+@keyframes textAnimation {
+  0% {
+    transform: scaleX(1);
+  }
+  25% {
+    transform: scaleX(1.1);
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(5px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.messages p {
+  animation: fadeIn infinite alternate ease 3s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+h2 {
+  font-size: 1.2rem;
+}
+
+.wastebux h2 {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.wastebux h2 span {
+  margin-left: 40px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.bottom-links {
+  display: none;
+  visibility: hidden;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  padding-right: 30px;
+  color: var(--dark);
+}
+
+a:hover,
+a:active {
+  text-decoration: none;
+  color: var(--mid);
+}
+
+header p {
+  padding-right: 30px;
+}
+
+sup {
+  font-size: 0.6rem;
+}
+
+.sidebar button {
+  background-color: var(--darkish);
+  padding: 6px 0 6px 10px;
+  background-image: linear-gradient(
+    160deg,
+    var(--darkish) 0%,
+    var(--lightish) 100%
+  );
+  color: var(--light);
+  border: none;
+  width: var(--btnwidth);
+  border-radius: 10px;
+  text-align: left;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-bottom: 4px solid var(--darkest);
+  border-right: 2px solid var(--darkest);
+}
+
+.sidebar button:hover {
+  background-image: linear-gradient(
+    160deg,
+    var(--lightish) 0%,
+    var(--darkish) 100%
+  );
+  color: var(--dark);
+  border-bottom: 1px solid var(--darkest);
+  border-right: 1px solid var(--darkest);
+  padding-bottom: 9px;
+}
+
+.sidebar .upgrades > p {
+  background-color: var(--lightish);
+  margin-top: 0px;
+  width: var(--btnwidth);
+  padding: 10px;
+  margin-top: 4px;
+  border-radius: 20px;
+}
+
+.upgrades {
+  width: var(--btnwidth);
+}
+
+.sidebar button > span:nth-child(1) {
+  padding-left: 4px;
+}
+
+.sidebar button > span:nth-child(2) {
+  color: var(--dark);
+  float: right;
+  padding-top: 3px;
+  padding-right: 4px;
+}
+
+.message-content {
+  padding: 10px;
+}
+
+@media screen and (max-width: 992px) {
+  body {
+    background-color: white;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  h1 {
+    font-size: 1.2rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .container {
+    max-width: 90%;
   }
+
+  .top-links {
+    display: none;
+    visibility: hidden;
+  }
+
+  .bottom-links {
+    display: block;
+    visibility: visible;
+  }
+
+  .bottom-links {
+    padding-top: 10px;
+    padding-left: 30px;
+  }
+
+  .waste {
+    grid-column: 1fr;
+  }
+  
+  .sidebar {
+    grid-column: 1fr;
+  }
+
 }
