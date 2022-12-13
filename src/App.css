@@ -35,13 +35,12 @@ h1 {
 /* grids */
 
 .container {
-  max-width: 50%;
-  margin: auto;
+  max-width: 80%;
+  margin: 0 auto;
   display: grid;
 }
 
 header {
-  grid-column: 1 / 4;
   display: flex;
   background-color: var(--light);
   align-items: baseline;
@@ -54,21 +53,11 @@ header p {
 
 .messages {
   background-color: beige;
-  grid-column: 1 / 4;
 }
 
 .wastebux {
   background-color: var(--dark);
   color: var(--light);
-  grid-column: 1 / 4;
-}
-
-.waste {
-  grid-column: 1 / 2;
-}
-
-.sidebar {
-  grid-column: 3 / 4;
 }
 
 /* other stuff */
@@ -186,7 +175,7 @@ sup {
   );
   color: var(--light);
   border: none;
-  width: var(--btnwidth);
+  width: 100%;
   border-radius: 10px;
   text-align: left;
   font-weight: bold;
@@ -210,14 +199,9 @@ sup {
 .sidebar .upgrades > p {
   background-color: var(--lightish);
   margin-top: 0px;
-  width: var(--btnwidth);
   padding: 10px;
   margin-top: 4px;
   border-radius: 20px;
-}
-
-.upgrades {
-  width: var(--btnwidth);
 }
 
 .sidebar button > span:nth-child(1) {
@@ -235,13 +219,36 @@ sup {
   padding: 10px;
 }
 
-@media screen and (max-width: 992px) {
-  body {
-    background-color: white;
+@media (min-width: 993px) {
+
+  header {
+  grid-column: 1 / 4;
   }
 
+  .messages {
+    grid-column: 1 / 4;
+  }
+  
+  .wastebux {
+    grid-column: 1 / 4;
+  }
+  
+  .waste {
+    grid-column: 1 / 2;
+  }
+  
+  .sidebar {
+    grid-column: 2 / 4;
+  }
+}
+
+@media screen and (max-width: 992px) {
   h1 {
     font-size: 1.2rem;
+  }
+
+  .wastebux h2 {
+    font-size: 0.9rem;
   }
 
   .container {
@@ -256,19 +263,23 @@ sup {
   .bottom-links {
     display: block;
     visibility: visible;
+    padding: 14px;
+    text-align: center;
   }
 
-  .bottom-links {
-    padding-top: 10px;
-    padding-left: 30px;
+  .sidebar button {
+    font-size: 1rem;
   }
 
-  .waste {
-    grid-column: 1fr;
+  .sidebar h2 {
+    font-size: 0.9rem;
+    text-align: center;
   }
-  
-  .sidebar {
-    grid-column: 1fr;
+
+  .waste img,
+  .waste-click img {
+    width: 200px;
+    height: auto;
   }
 
 }

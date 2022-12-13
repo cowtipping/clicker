@@ -48,10 +48,10 @@ const initialState = {
     owned: 0,
     isVisible: false,
   },
-}
+};
 
 function App() {
-  const [wastebux, setWastebux] = useState(20);
+  const [wastebux, setWastebux] = useState(0);
   const [cps, setCps] = useState(0);
   const [allUpgrades, setAllUpgrades] = useState(initialState);
   return (
@@ -61,10 +61,10 @@ function App() {
         <p>
           by adie nunn <sup>(sorry)</sup>
         </p>
-        <div class="top-links">
-        <a href="https://www.linkedin.com/in/adienunn/">linkedin</a>
-        <a href="https://github.com/cowtipping">github</a>
-        <a href="http://cowtipping.co.uk">folio</a>
+        <div className="top-links">
+          <a href="https://www.linkedin.com/in/adienunn/">linkedin</a>
+          <a href="https://github.com/cowtipping">github</a>
+          <a href="http://cowtipping.co.uk">folio</a>
         </div>
       </header>
       <Wastebux wastebux={wastebux} cps={cps} setWastebux={setWastebux} />
@@ -78,11 +78,13 @@ function App() {
         setAllUpgrades={setAllUpgrades}
       />
       <Messages />
-      <div class="bottom-links">
-        <a href="https://www.linkedin.com/in/adienunn/">linkedin</a>
-        <a href="https://github.com/cowtipping">github</a>
-        <a href="http://cowtipping.co.uk">folio</a>
+      <footer>
+        <div className="bottom-links">
+          <a href="https://www.linkedin.com/in/adienunn/">linkedin</a>
+          <a href="https://github.com/cowtipping">github</a>
+          <a href="http://cowtipping.co.uk">folio</a>
         </div>
+      </footer>
     </div>
   );
 }

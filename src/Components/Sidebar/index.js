@@ -19,7 +19,7 @@ const Sidebar = ({
     // Subtract cost from wastebux (unless you're skint)
     const moneyYouOwe = allUpgrades[clickedUpgrade].cost;
     if (moneyYouOwe > wastebux) {
-      console.log("skint!");
+      console.log("skint! (i'll change this to something more meaningful in-game one day");
     } else {
       // Add it to total cps
       setCps(cps + upgradeCPS);
