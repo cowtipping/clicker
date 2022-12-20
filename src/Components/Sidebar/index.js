@@ -41,6 +41,7 @@ const Sidebar = ({
   }
 
   // (this could almost defnitely dunked into an array and mapped)
+  // TODO: line 47 will not fix the conditional rendering issue and needs to be patched
   return (
     <div className="sidebar">
       {wastebux >= 20 || allUpgrades[1].owned > 0 ? <h2>🍪 upgrades 🍪</h2> : null}
