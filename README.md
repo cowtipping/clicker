@@ -2,6 +2,11 @@
 
 A simple Cookie Clicker clone made to help me learn React.js
 
+## Why Nuclear Waste Tho?
+
+I looked for inspiration in my bedroom.
+(A Fallout t-shirt)
+
 ## Demo
 
 [Live Site](https://cowtipping.co.uk/clickwaste/)
