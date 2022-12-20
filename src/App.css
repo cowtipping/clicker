@@ -243,8 +243,10 @@ sup {
 }
 
 @media screen and (max-width: 992px) {
-  h1 {
+  header h1 {
     font-size: 1.2rem;
+    margin: auto;
+    padding: 20px;
   }
 
   .wastebux h2 {
@@ -280,6 +282,7 @@ sup {
   .waste-click img {
     width: 200px;
     height: auto;
+    -webkit-tap-highlight-color: transparent;
   }
 
 }

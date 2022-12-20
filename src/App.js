@@ -58,7 +58,7 @@ function App() {
     <div className="container">
       <header>
         <h1>click the nuclear waste</h1>
-        <p>
+        <p className="top-links">
           by adie nunn <sup>(sorry)</sup>
         </p>
         <div className="top-links">
@@ -79,6 +79,9 @@ function App() {
       />
       <Messages />
       <footer>
+        <p className="bottom-links">
+          by adie nunn <sup>(sorry)</sup>
+        </p>
         <div className="bottom-links">
           <a href="https://www.linkedin.com/in/adienunn/">linkedin</a>
           <a href="https://github.com/cowtipping">github</a>
